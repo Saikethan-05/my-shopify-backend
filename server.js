@@ -67,7 +67,7 @@ app.post("/sync/products", async (req, res) => {
           tenantId: tenant.id,
         });
       }
-      console.log(`✅ Synced products for tenant: ${tenant.name}`);
+      console.log(` Synced products for tenant: ${tenant.name}`);
       totalCount += products.length;
     }
 
@@ -100,7 +100,7 @@ app.post("/sync/customers", async (req, res) => {
         });
       }
 
-      console.log(`✅ Synced customers for tenant: ${tenant.name}`);
+      console.log(` Synced customers for tenant: ${tenant.name}`);
       totalCount += customers.length;
     }
 
@@ -119,7 +119,7 @@ app.post("/sync/orders", async (req, res) => {
 
     for (let tenant of tenants) {
       if (!tenant.accessToken) {
-        console.log(`⚠️ No access token for tenant: ${tenant.name}`);
+        console.log(` No access token for tenant: ${tenant.name}`);
         continue;
       }
 
@@ -140,7 +140,7 @@ app.post("/sync/orders", async (req, res) => {
         });
       }
 
-      console.log(`✅ Synced ${orders.length} orders for tenant: ${tenant.name}`);
+      console.log(`Synced ${orders.length} orders for tenant: ${tenant.name}`);
       totalCount += orders.length;
     }
 
